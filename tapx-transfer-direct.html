@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101114">
+<title>TapX Transfer — напрямую между устройствами</title>
+<style>
+:root{color-scheme:dark;--bg:#101114;--panel:#1a1b21;--panel2:#22232b;--line:#343540;--text:#f6f7fb;--muted:#9b9daa;--lime:#c6ff5e;--ink:#11140b;--red:#ff8585}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -18%,#2d3730 0,transparent 48%),var(--bg);color:var(--text);font:15px/1.45 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--lime);outline-offset:3px}.wrap{width:min(100% - 28px,720px);margin:auto;padding:24px 0 40px}.top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:34px}.brand{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:850;letter-spacing:-.5px}.logo{display:grid;place-items:center;width:40px;height:40px;background:var(--lime);color:var(--ink);border-radius:14px;font-weight:1000;font-size:21px}.pill{font-size:11px;border:1px solid var(--line);padding:7px 10px;border-radius:99px;color:var(--muted)}.hero{margin-bottom:25px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--lime);font-weight:800;text-transform:uppercase}.hero h1{font-size:clamp(36px,8vw,56px);line-height:1;letter-spacing:-2.5px;margin:12px 0}.hero p{color:var(--muted);max-width:520px;margin:0}.tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;background:#17181d;border:1px solid var(--line);padding:5px;border-radius:16px;margin:25px 0 15px}.tab{border:0;background:transparent;color:var(--muted);font-weight:800;padding:12px;border-radius:11px}.tab.active{background:var(--lime);color:var(--ink)}.card{background:linear-gradient(145deg,#1d1e24,#17181d);border:1px solid var(--line);border-radius:22px;padding:clamp(17px,4vw,25px);box-shadow:0 18px 50px #0002}.card h2{font-size:20px;letter-spacing:-.5px;margin:0 0 5px}.sub{font-size:13px;color:var(--muted);margin:0 0 22px}.field{margin:17px 0}.labelrow{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}.label{font-size:13px;font-weight:800}.hint{font-size:11px;color:var(--muted)}input,textarea{width:100%;background:#111216;color:var(--text);border:1px solid #373842;border-radius:13px;padding:13px 14px;outline:none}textarea{min-height:140px;resize:vertical;line-height:1.5}input:focus,textarea:focus{border-color:#91b84d}input[type=file]{padding:11px;color:var(--muted)}input[type=file]::file-selector-button{border:0;border-radius:8px;padding:8px;background:#2b2c34;color:var(--text);margin-right:8px}.btn{width:100%;border:0;border-radius:13px;padding:14px 16px;font-weight:850;display:flex;justify-content:center;align-items:center;gap:9px}.primary{background:var(--lime);color:var(--ink)}.secondary{background:#292a33;color:var(--text);border:1px solid #3b3c46}.btn:disabled{opacity:.5;cursor:not-allowed}.status{display:none;margin-top:13px;padding:12px 13px;border-radius:12px;font-size:13px;overflow-wrap:anywhere}.status.show{display:block}.ok{background:#c6ff5e12;border:1px solid #c6ff5e4a;color:#e0ffad}.err{background:#ff858512;border:1px solid #ff85854a;color:#ffb4b4}.info{background:#ffffff08;border:1px solid var(--line);color:#c4c5ce}.files{display:grid;gap:8px;margin-top:10px}.file{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:#111216;padding:10px;border-radius:12px}.fileicon{width:36px;height:36px;border-radius:10px;background:#292a33;display:grid;place-items:center;flex-shrink:0}.filename{font-size:12px;font-weight:750;overflow-wrap:anywhere}.filesize{font-size:11px;color:var(--muted)}.remove{margin-left:auto;background:none;border:0;color:var(--muted);font-size:20px}.room{display:none;margin-top:16px;padding:15px;border-radius:16px;background:#c6ff5e0c;border:1px solid #c6ff5e50}.room.show{display:block}.roomtop{display:flex;justify-content:space-between;align-items:center;gap:10px}.room h3{font-size:15px;margin:0 0 5px}.room p{font-size:12px;color:var(--muted);margin:0 0 12px}.code{font-size:23px;letter-spacing:3px;font-weight:900;color:var(--lime);overflow-wrap:anywhere}.small{background:#292a33;color:var(--text);border:1px solid #444550;border-radius:10px;padding:9px 11px;font-size:12px;font-weight:800;white-space:nowrap}.output{display:none;margin-top:16px}.output.show{display:block}.outtext{white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto;padding:14px;border:1px solid var(--line);background:#111216;border-radius:13px}.media{display:grid;gap:10px;margin-top:10px}.media a{display:block;padding:12px;border:1px solid var(--line);border-radius:12px;background:#111216;color:var(--lime);overflow-wrap:anywhere}.media img,.media video{max-width:100%;border-radius:12px}.notice{margin-top:18px;border:1px solid #4a4538;background:#24221d;color:#d8d0bd;border-radius:13px;padding:13px;font-size:12px}.foot{text-align:center;color:#777985;font-size:11px;margin-top:20px}.hidden{display:none!important}@media(min-width:620px){.wrap{padding-top:34px}.hero p{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand"><div class="logo">X</div><span>TapX <span style="color:var(--lime)">Transfer</span></span></div><span class="pill">P2P · NO DATABASE</span></header>
+<section class="hero"><div class="eyebrow">Direct device-to-device</div><h1>Передай.<br>Забери. Готово.</h1><p>Текст и файлы летят напрямую между устройствами. Без аккаунтов и облачного хранилища — но обе стороны должны быть онлайн.</p></section>
+<div class="tabs"><button class="tab active" id="makeTab">↗ Отправить</button><button class="tab" id="getTab">↙ Получить</button></div>
+<section class="card" id="makePanel">
+<h2>Создать передачу</h2><p class="sub">Оставь эту вкладку открытой, пока получатель подключается.</p>
+<div class="field"><div class="labelrow"><label class="label" for="textIn">Текст</label><span class="hint">необязательно</span></div><textarea id="textIn" placeholder="Текст, ссылка, заметка, код…"></textarea></div>
+<div class="field"><div class="labelrow"><label class="label" for="filesIn">Фото, видео и файлы</label><span class="hint">до 8 МБ суммарно</span></div><input id="filesIn" type="file" multiple><div id="filesList" class="files"></div></div>
+<div class="field"><label class="label" for="passIn">Пароль передачи</label><input id="passIn" type="password" minlength="6" autocomplete="new-password" placeholder="Придумай пароль (минимум 6 символов)"></div>
+<button class="btn primary" id="startBtn">Создать передачу ↗</button><div id="sendStatus" class="status"></div>
+<div class="room" id="roomBox"><div class="roomtop"><h3>Твой код для получателя</h3><button class="small" id="copyPass">Копировать</button></div><div id="roomCode" class="code"></div><p style="margin-top:10px">Отправь пароль человеку другим способом. Держи эту страницу открытой. Передача начнётся, когда он введёт пароль на этой странице.</p></div>
+</section>
+<section class="card hidden" id="getPanel">
+<h2>Получить передачу</h2><p class="sub">Введи пароль отправителя. Он должен держать сайт открытым.</p>
+<div class="field"><label class="label" for="passGet">Пароль передачи</label><input id="passGet" type="password" autocomplete="off" placeholder="Введи пароль"></div>
+<button class="btn primary" id="connectBtn">Подключиться ↙</button><div id="getStatus" class="status"></div>
+<div class="output" id="output"><div class="field"><div class="labelrow"><span class="label">Полученный текст</span><button class="small" id="copyText">Копировать</button></div><div id="outText" class="outtext"></div></div><div class="field"><div class="label">Файлы</div><div class="media" id="outFiles"></div></div></div>
+</section>
+<div class="notice"><b>Как это работает:</b> PeerJS используется только для согласования соединения; текст и файлы передаются по WebRTC напрямую. Постоянного хранения нет. Если отправитель закроет вкладку или отключится, получить передачу уже не получится. Сервис согласования — внешний, поэтому это не полностью автономный офлайн-сайт. Не используй слабые пароли для чувствительных данных.</div>
+<footer class="foot">TapX Transfer · Static hosting · WebRTC</footer>
+</div>
+<script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
+<script>
+(() => {
+const $=id=>document.getElementById(id), enc=new TextEncoder(), dec=new TextDecoder();
+let peer=null, conn=null, selected=[], payloadReady=null, senderMode=false;
+const MAX=8*1024*1024;
+function show(id,msg,type='info'){const e=$(id);e.textContent=msg;e.className='status show '+type}
+function clear(id){const e=$(id);e.textContent='';e.className='status'}
+function tab(make){$('makePanel').classList.toggle('hidden',!make);$('getPanel').classList.toggle('hidden',make);$('makeTab').classList.toggle('active',make);$('getTab').classList.toggle('active',!make)}
+$('makeTab').onclick=()=>tab(true);$('getTab').onclick=()=>tab(false);
+function size(n){return n<1024?n+' Б':n<1048576?(n/1024).toFixed(1)+' КБ':(n/1048576).toFixed(2)+' МБ'}
+function renderFiles(){const root=$('filesList');root.replaceChildren();selected.forEach((f,i)=>{const row=document.createElement('div');row.className='file';const icon=document.createElement('div');icon.className='fileicon';icon.textContent=f.type.startsWith('image/')?'▧':f.type.startsWith('video/')?'▷':'↗';const meta=document.createElement('div');meta.style.minWidth='0';const name=document.createElement('div');name.className='filename';name.textContent=f.name;const sz=document.createElement('div');sz.className='filesize';sz.textContent=size(f.size);meta.append(name,sz);const rm=document.createElement('button');rm.className='remove';rm.textContent='×';rm.onclick=()=>{selected.splice(i,1);renderFiles()};row.append(icon,meta,rm);root.append(row)})}
+$('filesIn').onchange=e=>{const all=[...selected,...e.target.files];let total=0;selected=[];for(const f of all){if(total+f.size<=MAX){selected.push(f);total+=f.size}}renderFiles();e.target.value='';if(all.length!==selected.length)show('sendStatus','Лимит передачи — 8 МБ. Часть файлов не добавлена.','err');else clear('sendStatus')};
+async function sha(s){const h=await crypto.subtle.digest('SHA-256',enc.encode(s));return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function b64(b){let s='';const a=new Uint8Array(b);for(let i=0;i<a.length;i+=32768)s+=String.fromCharCode(...a.subarray(i,i+32768));return btoa(s)}
+function un64(s){return Uint8Array.from(atob(s),c=>c.charCodeAt(0))}
+async function keyFor(password,salt){const base=await crypto.subtle.importKey('raw',enc.encode(password),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:220000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
+async function encrypt(obj,password){const salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),key=await keyFor(password,salt);const data=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,enc.encode(JSON.stringify(obj)));return {salt:b64(salt),iv:b64(iv),data:b64(data)}}
+async function decrypt(obj,password){const key=await keyFor(password,un64(obj.salt));const data=await crypto.subtle.decrypt({name:'AES-GCM',iv:un64(obj.iv)},key,un64(obj.data));return JSON.parse(dec.decode(data))}
+function fileData(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=()=>rej(Error('Не удалось прочитать '+file.name));r.readAsDataURL(file)})}
+function destroyPeer(){try{if(conn)conn.close()}catch{}try{if(peer)peer.destroy()}catch{}conn=null;peer=null}
+async function prepare(password){return encrypt({text:$('textIn').value,files:await Promise.all(selected.map(async f=>({name:f.name,type:f.type||'application/octet-stream',size:f.size,data:await fileData(f)})))},password)}
+$('startBtn').onclick=async()=>{
+clear('sendStatus');$('roomBox').classList.remove('show');
+const password=$('passIn').value;if(password.length<6)return show('sendStatus','Пароль должен содержать минимум 6 символов.','err');
+if(!$('textIn').value.trim()&&!selected.length)return show('sendStatus','Добавь текст или хотя бы один файл.','err');
+const total=selected.reduce((n,f)=>n+f.size,0);if(total>MAX)return show('sendStatus','Файлы превышают лимит 8 МБ.','err');
+if(!window.Peer)return show('sendStatus','Не удалось загрузить PeerJS. Проверь интернет и обнови страницу.','err');
+const btn=$('startBtn');btn.disabled=true;btn.textContent='Подготавливаю передачу…';destroyPeer();
+try{
+payloadReady=await prepare(password);
+const peerId='tapx-'+(await sha('tapx-direct-v1:'+password)).slice(0,40);
+peer=new Peer(peerId,{debug:0});
+peer.on('open',()=>{senderMode=true;$('roomCode').textContent=password;$('roomBox').classList.add('show');show('sendStatus','Ожидаю получателя. Не закрывай эту страницу.','ok');btn.disabled=false;btn.textContent='Передача создана ✓'});
+peer.on('connection',c=>{conn=c;show('sendStatus','Получатель подключился — отправляю зашифрованные данные…','info');c.on('open',()=>{c.send({type:'tapx-transfer',payload:payloadReady});});c.on('data',msg=>{if(msg&&msg.type==='received')show('sendStatus','Получатель получил передачу ✓','ok')});c.on('error',()=>show('sendStatus','Соединение прервалось. Попробуйте создать передачу заново.','err'))});
+peer.on('error',e=>{btn.disabled=false;btn.textContent='Создать передачу ↗';const message=e.type==='unavailable-id'?'Этот пароль уже занят активной передачей. Выбери другой пароль.':e.type==='peer-unavailable'?'Получатель пока не найден. Проверь пароль и попробуй снова.':'Не удалось открыть соединение: '+(e.type||'ошибка PeerJS');show('sendStatus',message,'err')});
+}catch(e){btn.disabled=false;btn.textContent='Создать передачу ↗';show('sendStatus',e.message||'Ошибка подготовки передачи.','err')}
+};
+$('copyPass').onclick=async()=>{try{await navigator.clipboard.writeText($('roomCode').textContent);$('copyPass').textContent='Скопировано ✓'}catch{show('sendStatus','Не удалось скопировать пароль. Выдели его вручную.','info')}};
+$('connectBtn').onclick=async()=>{
+clear('getStatus');$('output').classList.remove('show');
+const password=$('passGet').value;if(password.length<6)return show('getStatus','Введи пароль длиной минимум 6 символов.','err');
+if(!window.Peer)return show('getStatus','PeerJS не загрузился. Проверь интернет и обнови страницу.','err');
+const btn=$('connectBtn');btn.disabled=true;btn.textContent='Подключаюсь…';destroyPeer();
+try{
+const peerId='tapx-'+(await sha('tapx-direct-v1:'+password)).slice(0,40);
+peer=new Peer({debug:0});
+peer.on('open',()=>{conn=peer.connect(peerId,{reliable:true});conn.on('open',()=>show('getStatus','Соединение установлено. Получаю данные…','info'));conn.on('data',async msg=>{
+if(!msg||msg.type!=='tapx-transfer')return;
+try{const result=await decrypt(msg.payload,password);$('outText').textContent=result.text||'Текст не прикреплён.';const root=$('outFiles');root.replaceChildren();for(const f of (result.files||[])){const a=document.createElement('a');a.href=f.data;a.download=f.name;a.textContent='↓ '+f.name+' · '+size(f.size);root.append(a);if(f.type.startsWith('image/')){const im=document.createElement('img');im.src=f.data;im.alt=f.name;im.loading='lazy';root.append(im)}else if(f.type.startsWith('video/')){const v=document.createElement('video');v.src=f.data;v.controls=true;v.playsInline=true;root.append(v)}}if(!(result.files||[]).length)root.textContent='Файлы не прикреплены.';$('output').classList.add('show');show('getStatus','Готово! Данные расшифрованы на этом устройстве.','ok');conn.send({type:'received'});btn.disabled=false;btn.textContent='Подключиться ↙'}catch(e){show('getStatus','Данные повреждены или пароль не подходит.','err');btn.disabled=false;btn.textContent='Подключиться ↙'}
+});conn.on('error',()=>{show('getStatus','Не удалось подключиться. Проверь пароль и убедись, что отправитель онлайн.','err');btn.disabled=false;btn.textContent='Подключиться ↙'});conn.on('close',()=>{if(!$('output').classList.contains('show')){show('getStatus','Соединение закрыто. Возможно, отправитель отключился.','err');btn.disabled=false;btn.textContent='Подключиться ↙'}})});
+peer.on('error',e=>{const msg=e.type==='peer-unavailable'?'Передача не найдена. Проверь пароль и попроси отправителя оставить страницу открытой.':'Ошибка соединения ('+(e.type||'PeerJS')+'). Попробуй ещё раз.';show('getStatus',msg,'err');btn.disabled=false;btn.textContent='Подключиться ↙'});
+}catch(e){show('getStatus',e.message||'Ошибка подключения.','err');btn.disabled=false;btn.textContent='Подключиться ↙'}
+};
+$('copyText').onclick=async()=>{try{await navigator.clipboard.writeText($('outText').textContent);$('copyText').textContent='Скопировано ✓'}catch{show('getStatus','Не удалось скопировать автоматически — выдели текст вручную.','info')}};
+})();
+</script>
+</body>
+</html>
